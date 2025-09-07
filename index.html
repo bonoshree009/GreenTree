@@ -29,9 +29,9 @@
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li><a>Parent</a></li>
-        <li><a>Item 3</a></li>
+        <li><a>About</a></li>
+        <li><a>Gallery</a></li>
+        <li><a>Plant a Tree</a></li>
       </ul>
     </div>
     <a class="btn btn-ghost text-xl text-white">Green Earth</a>
@@ -67,7 +67,9 @@
     <main class="bg-[f0fdf4]">
         <section class="functions"></section>
 
-        <section class="mx-auto max-w-[1250px] my-11">
+         <!-- About the Campaign -->
+
+        <section class="mx-auto max-w-[1250px] my-11 ">
           <h1 class="text-center font-bold text-xl">About the Campaign</h1>
 
           <div class="flex  flex-col md:flex-row justify-center items-center mt-8 p-3 ">
@@ -81,17 +83,33 @@
             </div>
           </div>
         </section>
-        <section class="py-16 px-5 bg-[#cff0dc]">
+
+        <!-- Our Impact -->
+
+        <section class="py-16 px-5 bg-[#cff0dc] ">
           <h1 class="text-center text-2xl font-bold">Our Impact</h1>
-          <div class="flex justify-center gap-12 mt-10">
+          <div class="flex flex-col md:flex-row justify-center gap-12 mt-10">
             <div class="text-[#15803d] bg-white rounded-xl px-36 py-10 text-center space-y-2"><h1 class="text-2xl font-bold">500K+</h1><p class=" text-gray-600">Trees Planted</p></div>
              <div class="text-[#15803d] bg-white rounded-xl px-36 py-10 text-center space-y-2"><h1 class="text-2xl font-bold">120K+</h1><p class=" text-gray-600">Communities Involved</p></div>
              <div class="text-[#15803d] bg-white rounded-xl px-36 py-10 text-center space-y-2"><h1 class="text-2xl font-bold">30K+</h1><p class=" text-gray-600">Countries Reached</p></div>
-
           </div>
         </section>
     </main>
-    <footer></footer>
+
+    <footer class="bg-[#166534]">
+      <div class="p-3 md:px-40 md:py-10 flex flex-col">
+        <h1 class="text-center text-white text-xl font-bold">Plant a Tree Today</h1>
+        <div class=" bg-[#15803d] flex flex-col justify-center  items-center space-y-2 m-5  md:max-w-md max-w-sm mx-auto w-full p-5 rounded-lg">
+         
+             <input type="text" placeholder="Small" class="input input-sm w-full"  />
+             <input type="text" placeholder="Small" class="input input-sm w-full" />
+             <input type="text" placeholder="Small" class="input input-sm w-full" />
+             <button class="btn rounded-3xl bg-[#facc15] text-[#15803d]  border-0 w-full ">plant a tree</button>
+
+</div>
+</div>
+  <div class="w-full bg-[#14532d] py-3 text-center text-white text-[10px]">© 2025 Green Earth. All Rights Reserved.</div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>
