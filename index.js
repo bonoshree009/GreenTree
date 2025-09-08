@@ -1,10 +1,16 @@
+
 console.log("hello")
+let allplants=[]
 const url = "https://openapi.programming-hero.com/api/plants"
 const cartfetch =() => {
-    fetch(url).then(res => res.json()).then(data => cartload(data.plants))
+    fetch(url).then(res => res.json()).then(data =>{
+        allplants= data.plants 
+        cartload(allplants)})
+        
 }
 
-const cartload =(plants)=>{
+
+let cartload =(plants)=>{
     const allcartId = document.getElementById("cart")
    plants.forEach( plant=> {
     const div = document.createElement("div")
@@ -21,25 +27,40 @@ const cartload =(plants)=>{
    });   
 }
 
-
+ 
 const url2 = "https://openapi.programming-hero.com/api/categories"
 const categoriesfetch =() => {
     fetch(url2).then(res => res.json()).then(data => categoriesload(data.categories))
 }
 
 const categoriesload =(categories)=>{
-    console.log(categories)
+    //console.log(categories)
+    
     const allcategoriesId = document.getElementById("categoris")
    categories.forEach( category=> {
     const button = document.createElement("button")
-    button.innerHTML = `<button class=" hover:bg-[#15803d] hover:text-white text-left bg-[#f0fdf4] border-0 p-2 rounded w-full">${category.category_name}</button>
-
-`
+    
+    button.innerHTML = `<button class="  text-left button hover:bg-[#15803d] hover:text-[white]
+     bg-[#f0fdf4] border-0 p-2 rounded w-full" id="${category.id}">${category.category_name}</button>`
+     
+     button.addEventListener("click",()=>hover(category.id))
      allcategoriesId.appendChild(button);
    });   
 }
 
+const hover =(id)=> {
+             document.querySelectorAll("button").forEach(btn=> {
+                btn.classList.remove("buttonHober")
+                
+             });
+             document.getElementById(id).classList.add("buttonHober")
+        let categoryName = document.getElementById(id).innerText;
+       document.getElementById("cart").innerHTML = "";
 
+        let filtered = allplants.filter(filter =>filter.category === categoryName)
+        cartload(filtered)
+             
+}
 
 categoriesfetch()
 cartfetch()
