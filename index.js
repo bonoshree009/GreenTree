@@ -8,7 +8,7 @@ const cartload =(plants)=>{
     const allcartId = document.getElementById("cart")
    plants.forEach( plant=> {
     const div = document.createElement("div")
-    div.innerHTML = `<div class="p-5 bg-white rounded space-y-3 w-full h-full "> <img src="${plant.image}" alt="" class="object-cover w-full h-40">
+    div.innerHTML = `<div class="p-5 bg-white rounded space-y-3 w-full h-full shadow-lg "> <img src="${plant.image}" alt="" class="object-cover w-full h-40">
                         <h1 class="font-bold ">${plant.name}</h1>
                         <p class=" text-gray-600 ">${plant.description}</p>
                       <div class="flex justify-between">
@@ -19,11 +19,27 @@ const cartload =(plants)=>{
 `
      allcartId.appendChild(div);
    });   
+}
 
- 
+
+const url2 = "https://openapi.programming-hero.com/api/categories"
+const categoriesfetch =() => {
+    fetch(url2).then(res => res.json()).then(data => categoriesload(data.categories))
+}
+
+const categoriesload =(categories)=>{
+    console.log(categories)
+    const allcategoriesId = document.getElementById("categoris")
+   categories.forEach( category=> {
+    const button = document.createElement("button")
+    button.innerHTML = `<button class=" hover:bg-[#15803d] hover:text-white text-left bg-[#f0fdf4] border-0 p-2 rounded w-full">${category.category_name}</button>
+
+`
+     allcategoriesId.appendChild(button);
+   });   
 }
 
 
 
-
+categoriesfetch()
 cartfetch()
