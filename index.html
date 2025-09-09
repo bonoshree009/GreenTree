@@ -79,22 +79,25 @@
           <h1 class="text-center font-bold text-xl mt-4">Choose Your Trees</h1>
              <section class="flex justify-center mt-10"> <span class="loading loading-dots loading-xl hidden" id="spinner"></span></section>
 
-          <div class=" grid grid-cols-1 md:grid-cols-5 py-3 border-2 max-w-11/12 mx-auto gap-1">
+          <div class=" grid grid-cols-1 md:grid-cols-5 py-3 max-w-11/12 mx-auto gap-2">
 
-            <section class=" p-3">
+            <section>
               <h1 class="font-bold">Categories</h1>
               <div id="categoris" class="flex flex-col gap-3 mt-4 ">
               </div>
             </section>
 
-            <section class=" col-span-3 grid grid-cols-1 md:grid-cols-3 p-2 gap-3 items-stretch" id="cart">
+            <section class="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-3 items-stretch" id="cart">
             </section>
 
-
-            <section class=" bg-white p-3 flex flex-col gap-3 rounded">
+                <section class="p-2 bg-white">
+           
+             <div class=" p-2 flex flex-col gap-3 rounded">
               <h1 class="font-bold">Your Cart</h1>
-              <div id="yourcart" class="flex flex-col  rounded gap-3 p-1"></div>
+              <div id="yourcart" class="flex flex-col rounded space-y-2 p-1"> </div>
               <p class="text-right" id="total"></p>
+              </div>
+            
                
              
             </section>

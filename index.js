@@ -95,11 +95,11 @@ const yourcart=(id)=>{
 
     const allyourcart = document.getElementById("yourcart")
       const div = document.createElement("div")
-        div.innerHTML=`<div class="flex justify-between items-center bg-[#cff0dc] rounded p-3 ">
+        div.innerHTML=`<div class="flex justify-between items-center bg-[#cff0dc] rounded p-3 gap-2 ">
                   <div><h1  class="font-bold">${plant.name}</h1>
                    <h1 class="text-gray-600 ">৳<span id="price">${plant.price}</span></h1>
                    </div>
-                  <div class="p-3" onclick ="removecart(${id},this)"><i class="fa-solid fa-xmark bg-red-600"></i></div>
+                  <div  onclick ="removecart(${id},this)"><i class="fa-solid fa-xmark bg-red-600 p-1"></i></div>
                 </div>
                 `
           allyourcart.appendChild(div) 
@@ -107,8 +107,8 @@ const yourcart=(id)=>{
               p.innerHTML= ` Total: ${total}`
 }
 const removecart=(id,element)=>{
-    element.parentNode.remove()
-    const plant =allplants.find(p=>p.id == id)
+    element.parentNode.parentNode.remove()
+    const plant = allplants.find(p => p.id == id)
     let amount =parseInt(plant.price)
        total =total - amount
        console.log(total)
